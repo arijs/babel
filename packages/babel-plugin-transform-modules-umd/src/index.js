@@ -9,6 +9,7 @@ import {
   ensureStatementsHoisted,
   wrapInterop,
   getModuleName,
+  amdImportId,
 } from "@babel/helper-module-transforms";
 import { types as t, template } from "@babel/core";
 
@@ -170,7 +171,9 @@ export default declare((api, options) => {
           }
 
           for (const [source, metadata] of meta.source) {
-            amdArgs.push(t.stringLiteral(source));
+            amdArgs.push(
+              t.stringLiteral(amdImportId(source, this.file.opts, options)),
+            );
             commonjsArgs.push(
               t.callExpression(t.identifier("require"), [
                 t.stringLiteral(source),

@@ -1,4 +1,5 @@
 import assert from "assert";
+import path from "path";
 import * as t from "@babel/types";
 import template from "@babel/template";
 import chunk from "lodash/chunk";
@@ -14,9 +15,9 @@ import normalizeAndLoadModuleMetadata, {
   type SourceModuleMetadata,
 } from "./normalize-and-load-metadata";
 
-export { default as getModuleName } from "./get-module-name";
+import getModuleName from "./get-module-name";
 
-export { hasExports, isSideEffectImport, isModule, rewriteThis };
+export { hasExports, isSideEffectImport, isModule, rewriteThis, getModuleName };
 
 /**
  * Perform all of the generic ES6 module rewriting needed to handle initial
@@ -180,6 +181,29 @@ export function buildNamespaceInitStatements(
     statements.push(statement);
   }
   return statements;
+}
+
+const reRelativePath = /^\.*\//;
+
+export function amdImportId(importRelative, rootOpts, pluginOpts) {
+  if (!reRelativePath.test(importRelative)) return importRelative;
+  const rootAbsolute = rootOpts.filename;
+  const rootRelativeSource = rootOpts.filenameRelative;
+  const importAbsolute = path.join(path.dirname(rootAbsolute), importRelative);
+  const importRelativeSource = path.join(
+    path.dirname(rootRelativeSource),
+    importRelative,
+  );
+  return (
+    getModuleName(
+      {
+        ...rootOpts,
+        filename: importAbsolute,
+        filenameRelative: importRelativeSource,
+      },
+      pluginOpts,
+    ) || importRelative
+  );
 }
 
 const ReexportTemplate = {
