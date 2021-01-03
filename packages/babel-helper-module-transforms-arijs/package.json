@@ -1,6 +1,6 @@
 {
   "name": "@arijs/babel-helper-module-transforms",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Babel helper functions for implementing ES6 module transformations",
   "author": "Rafael Hengles <rhengles@gmail.com>",
   "homepage": "https://babeljs.io/",
