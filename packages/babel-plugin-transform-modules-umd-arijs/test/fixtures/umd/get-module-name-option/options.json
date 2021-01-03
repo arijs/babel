@@ -1,0 +1,10 @@
+{
+  "sourceType": "module",
+  "plugins": [
+    "external-helpers",
+    ["transform-modules-umd-arijs", {
+      "moduleIds": true,
+      "moduleId": "my custom module name"
+    }]
+  ]
+}

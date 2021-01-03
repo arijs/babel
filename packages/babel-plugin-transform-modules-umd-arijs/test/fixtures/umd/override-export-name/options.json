@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "external-helpers",
+    [
+      "transform-modules-umd-arijs",
+      {
+        "globals": {
+          "actual": "baz"
+        },
+        "exactGlobals": true
+      }
+    ]
+  ]
+}

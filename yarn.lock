@@ -5,9 +5,9 @@ __metadata:
   version: 4
   cacheKey: 7
 
-"@arijs/babel-helper-module-transforms@workspace:^0.1.0, @arijs/babel-helper-module-transforms@workspace:packages/arijs-babel-helper-module-transforms":
+"@arijs/babel-helper-module-transforms@workspace:^0.1.0, @arijs/babel-helper-module-transforms@workspace:packages/babel-helper-module-transforms-arijs":
   version: 0.0.0-use.local
-  resolution: "@arijs/babel-helper-module-transforms@workspace:packages/arijs-babel-helper-module-transforms"
+  resolution: "@arijs/babel-helper-module-transforms@workspace:packages/babel-helper-module-transforms-arijs"
   dependencies:
     "@babel/helper-module-imports": "workspace:^7.12.1"
     "@babel/helper-replace-supers": "workspace:^7.12.1"
@@ -21,9 +21,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@arijs/babel-plugin-transform-modules-umd@workspace:packages/arijs-babel-plugin-transform-modules-umd":
+"@arijs/babel-plugin-transform-modules-umd@workspace:packages/babel-plugin-transform-modules-umd-arijs":
   version: 0.0.0-use.local
-  resolution: "@arijs/babel-plugin-transform-modules-umd@workspace:packages/arijs-babel-plugin-transform-modules-umd"
+  resolution: "@arijs/babel-plugin-transform-modules-umd@workspace:packages/babel-plugin-transform-modules-umd-arijs"
   dependencies:
     "@arijs/babel-helper-module-transforms": "workspace:^0.1.0"
     "@babel/core": "workspace:*"

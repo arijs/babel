@@ -1,0 +1,7 @@
+{
+  "plugins": [
+    "external-helpers",
+    "transform-modules-umd-arijs",
+    "syntax-module-string-names"
+  ]
+}

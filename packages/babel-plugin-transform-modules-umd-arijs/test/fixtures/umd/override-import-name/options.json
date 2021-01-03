@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "external-helpers",
+    [
+      "transform-modules-umd-arijs",
+      {
+        "globals": {
+          "es6-promise": "Promise"
+        }
+      }
+    ]
+  ]
+}
